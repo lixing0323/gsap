@@ -171,7 +171,7 @@
             top: '-100%',
             duration: 1,
             onComplete() {
-              router.push({ name: 'Five' })
+              router.replace({ name: 'Five' })
             },
           },
           'stop'

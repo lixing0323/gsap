@@ -84,7 +84,7 @@
             top: '-100%',
             duration: 1,
             onComplete() {
-              router.push({ name: 'One' })
+              router.replace({ name: 'One' })
             },
           },
           'stop'
@@ -102,8 +102,7 @@
     top: 25%;
     height: 50%;
     width: 100%;
-    background-color: black;
-    opacity: 0.8;
+    background-color: #080404;
     z-index: 2;
   }
 

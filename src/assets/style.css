@@ -61,12 +61,17 @@ canvas {
 }
 
 body {
-    -webkit-text-size-adjust: none !important;
-    overflow: hidden; /* Hide scrollbars */
     padding-left: constant(safe-area-inset--bottom); /*兼容 IOS<11.2*/
     padding-left: env(safe-area-inset--bottom); /*兼容 IOS>11.2*/
     padding-right: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
     padding-right: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+    /* iOS 11 */
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-top: constant(safe-area-inset-top);
+    /* iOS 11.2+*/
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
+    background-color: #080404;
 }
 
 .forbid-select {
@@ -79,6 +84,6 @@ body {
 .page-container {
     background-size: 100% 100%;
     overflow: hidden;
-    background-color: black;
+    background-color: #080404;
     height: 100%;
 }

@@ -55,7 +55,7 @@
             top: '-100%',
             duration: 1,
             onComplete() {
-              router.push({ name: 'Three' })
+              router.replace({ name: 'Three' })
             },
           },
           'stop'

@@ -39,9 +39,8 @@
 
   function initElement(scale, screenWidth, screenHeight) {
     contentWidth.value = SCENE_WIDTH * scale
-    spaceWidth.value = (screenWidth-contentWidth.value) / 2
+    spaceWidth.value = (screenWidth - contentWidth.value) / 2
     height.value = screenHeight
-    console.log(screenHeight, screenWidth, scale, contentWidth.value)
   }
 </script>
 
@@ -51,7 +50,7 @@
   }
 
   .left {
-    background-color: black;
+    background-color: #080404;
     z-index: 99;
   }
 
@@ -60,7 +59,7 @@
   }
 
   .right {
-    background-color: black;
+    background-color: #080404;
     z-index: 99;
   }
 </style>

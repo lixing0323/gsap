@@ -49,6 +49,7 @@
   import RectImgSrc from '@/assets/image/five/rect.png'
   import BoxImgSrc from '@/assets/image/five/box.png'
   import SelfAdaptionImg from '../components/self-adaption-img.vue'
+  import { getScreenWH } from '@/utils/screen'
   import { onMounted, ref } from 'vue'
   import gsap from 'gsap'
   import { useRouter } from 'vue-router'
@@ -64,15 +65,18 @@
   })
 
   function show() {
+    const { screenWidth, screenHeight } = getScreenWH()
+    const move = (1200 * screenHeight) / 800
+
     for (let i = 0; i < 4; i++) {
       const targets = `.img-${i + 1}`
       gsap.to(targets, {
         duration: 6,
         ease: 'none',
         yoyo: true,
-        y: '-=1200',
+        y: `-=${move}`,
         modifiers: {
-          y: gsap.utils.unitize((y) => parseFloat(y) % 1200),
+          y: gsap.utils.unitize((y) => parseFloat(y) % move),
         },
         repeat: -1,
         onRepeat(self) {
@@ -96,7 +100,7 @@
             clipPath: 'inset(0% 50% 0% 50%)',
             duration: 2,
             onComplete() {
-              router.push({ name: 'End' })
+              router.replace({ name: 'End' })
             },
           },
           'stop'
@@ -108,7 +112,7 @@
   .page-container {
     background-size: 100% 100%;
     overflow: hidden;
-    background-color: black;
+    background-color: #080404;
     height: 100%;
   }
 
@@ -121,7 +125,6 @@
     height: 100%;
     left: 0;
     position: absolute;
-    z-index: -50;
   }
 
   .img-1 {
