@@ -39,7 +39,7 @@
 
   function initElement(scale, screenWidth, screenHeight) {
     contentWidth.value = SCENE_WIDTH * scale
-    spaceWidth.value = contentWidth.value / 2
+    spaceWidth.value = (screenWidth-contentWidth.value) / 2
     height.value = screenHeight
     console.log(screenHeight, screenWidth, scale, contentWidth.value)
   }

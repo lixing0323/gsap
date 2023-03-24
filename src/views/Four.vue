@@ -88,7 +88,7 @@
         {
           scale: 0.8,
           opacity: 0.5,
-          duration: 3,
+          duration: 2,
         }
       )
       .to('.img-1', {
@@ -102,7 +102,7 @@
         {
           opacity: 0.5,
           scale: 0.8,
-          duration: 3,
+          duration: 2,
         }
       )
       .to('.img-2', {
@@ -116,7 +116,7 @@
         {
           scale: 0.8,
           opacity: 0.5,
-          duration: 3,
+          duration: 2,
         }
       )
       .to('.img-3', {
@@ -130,7 +130,7 @@
         {
           opacity: 0.5,
           scale: 0.8,
-          duration: 3,
+          duration: 2,
         }
       )
       .to('.img-4', {
@@ -144,7 +144,7 @@
         {
           opacity: 0.5,
           scale: 0.8,
-          duration: 3,
+          duration: 2,
         }
       )
       .to('.img-5', {

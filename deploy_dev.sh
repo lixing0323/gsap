@@ -30,7 +30,7 @@ expect {
   "*password:" { send "$password\r"  }
 }
 
-expect "*~*"
+expect "%"
 log_user 1
 send "cd $remote_path;rm -rf dist_bak 2>/dev/null; mv dist dist_bak 2>/dev/null; unzip -q dist.zip; chown -R $user:$user dist; rm -f dist.zip\r"
 expect "*"

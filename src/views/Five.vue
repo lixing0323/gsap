@@ -1,5 +1,9 @@
 <template>
-  <div class="page-container" :class="{ 'cursor-point': point }" @click="next()">
+  <div
+    class="page-container"
+    :class="{ 'cursor-point': point }"
+    @click="next()"
+  >
     <background
       class="background"
       :img-src="BackgroundImgSrc"
@@ -60,15 +64,6 @@
   })
 
   function show() {
-    gsap.timeline().fromTo(
-      '#background',
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 1,
-      }
-    )
-
     for (let i = 0; i < 4; i++) {
       const targets = `.img-${i + 1}`
       gsap.to(targets, {
@@ -110,6 +105,13 @@
   }
 </script>
 <style scoped>
+  .page-container {
+    background-size: 100% 100%;
+    overflow: hidden;
+    background-color: black;
+    height: 100%;
+  }
+
   .background {
     z-index: 1;
   }
@@ -119,35 +121,35 @@
     height: 100%;
     left: 0;
     position: absolute;
-    z-index: -99;
+    z-index: -50;
   }
 
   .img-1 {
     left: 5%;
     top: -20%;
     position: absolute;
-    z-index: -10;
+    z-index: 0;
   }
 
   .img-2 {
     left: 28%;
     top: -120%;
     position: absolute;
-    z-index: -10;
+    z-index: 0;
   }
 
   .img-3 {
     left: 52%;
     top: -220%;
     position: absolute;
-    z-index: -10;
+    z-index: 0;
   }
 
   .img-4 {
     right: 5%;
     top: -320%;
     position: absolute;
-    z-index: -10;
+    z-index: 0;
   }
 
   .cursor-point {
