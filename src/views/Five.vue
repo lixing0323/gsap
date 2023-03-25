@@ -68,22 +68,52 @@
     const { screenWidth, screenHeight } = getScreenWH()
     const move = (1200 * screenHeight) / 800
 
+    gsap.timeline().fromTo(
+      '#background',
+      { clipPath: 'circle(0%)' },
+      {
+        clipPath: 'circle(100%)',
+        duration: 3,
+      }
+    )
+
+    gsap.fromTo(
+      '.rect',
+      { clipPath: 'circle(0%)' },
+      {
+        clipPath: 'circle(100%)',
+        duration: 3,
+      }
+    )
+
     for (let i = 0; i < 4; i++) {
       const targets = `.img-${i + 1}`
-      gsap.to(targets, {
-        duration: 6,
-        ease: 'none',
-        yoyo: true,
-        y: `-=${move}`,
-        modifiers: {
-          y: gsap.utils.unitize((y) => parseFloat(y) % move),
-        },
-        repeat: -1,
-        onRepeat(self) {
-          point.value = true
-          canGoNext.value = true
-        },
-      })
+      gsap
+        .timeline()
+        .fromTo(
+          targets,
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 2,
+          }
+        )
+        .to(targets, {
+          duration: 6,
+          ease: 'none',
+          yoyo: true,
+          y: `-=${move}`,
+          modifiers: {
+            y: gsap.utils.unitize((y) => parseFloat(y) % move),
+          },
+          repeat: -1,
+          onRepeat(self) {
+            point.value = true
+            canGoNext.value = true
+          },
+        })
     }
   }
 
