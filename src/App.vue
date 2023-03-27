@@ -8,7 +8,7 @@
 
     <div class="right" :style="spaceObject" />
   </div>
-  <landscape-info />
+  <landscape-info v-if='false' />
 </template>
 
 <script setup>
@@ -71,12 +71,14 @@
     background-color: #080404;
     z-index: 999;
     position: absolute;
+    overflow: hidden;
     left: 0;
     top: 0;
   }
 
   .content {
     position: absolute;
+    overflow: hidden;
   }
 
   .right {
@@ -85,5 +87,6 @@
     right: 0;
     bottom: 0;
     position: absolute;
+    overflow: hidden;
   }
 </style>

@@ -72,6 +72,8 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
     padding-top: env(safe-area-inset-top);
     background-color: #080404;
+    -webkit-text-size-adjust: none !important;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 .forbid-select {
